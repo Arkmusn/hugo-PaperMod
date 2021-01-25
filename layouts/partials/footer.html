@@ -1,13 +1,25 @@
 <footer class="footer">
-    {{- if .Site.Copyright }}
+    <div>{{- if .Site.Copyright }}
     <span>{{ .Site.Copyright | markdownify }}</span>
     {{- else }}
-    <span>&copy; {{ now.Year }} <a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a></span>
+        <span>&copy; 2018-{{ now.Year }} <a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a></span>
     {{- end }}
-    <span>&middot;</span>
+    </div>
+    <div>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>
     <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+        <span>&middot;</span>
+        <span>Hosted On <a href="https://www.netlify.com/">Netlify</a></span>
+    </div>
+    <div class="flex-container"><span>CC BY-NC</span></div>
+    <div class="flex-container">
+        <span>
+            <a href="https://creativecommons.org/licenses/by-nc/4.0/">
+                <img id="license-image" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc.eu.png" alt="CC BY-NC">
+            </a>
+        </span>
+    </div>
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
     <button class="top-link" id="top-link" type="button" accesskey="g">
@@ -82,3 +94,16 @@
 
 </script>
 {{- end }}
+
+<style>
+    #license-image {
+        width: 70px;
+    }
+    .flex-container {
+        display: flex;
+        justify-content: center;
+    }
+    .flex-container > * {
+        margin: 0 5px;
+    }
+</style>
